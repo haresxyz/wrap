@@ -1,9 +1,9 @@
-name: Taiko Wrap/Unwrap
+name: Wrap
 
 on:
   schedule:
-    - cron: '2 2 * * *' # waktu UTC
-  workflow_dispatch: {} # bisa dijalankan manual
+    - cron: '2 2 * * *' #  UTC
+  workflow_dispatch: {} # manual
 
 jobs:
   run-bot:
