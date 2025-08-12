@@ -66,7 +66,7 @@ weth_abi = '''
 weth_contract = web3.eth.contract(address=weth_contract_address, abi=weth_abi)
 
 # Amount ETH/WETH to wrap/unwrap (in wei)
-amount_in_wei = web3.to_wei(0.004, 'ether')
+amount_in_wei = web3.to_wei(0.4, 'ether')
 
 # Gas settings
 gas_price_gwei = 0.1
