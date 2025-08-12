@@ -182,22 +182,22 @@ def load_transaction_status():
 
 wrap_counter, unwrap_counter, total_tx = load_transaction_status()
 
-while total_tx < 70:
-    if wrap_counter < 35 and total_tx < 110:
+while total_tx < 20:
+    if wrap_counter < 10 and total_tx < 110:
         if wrap_eth_to_weth(amount_in_wei):
             wrap_counter += 1
             total_tx += 1
             print(f"Total Transactions: {total_tx} (Wrapping: {wrap_counter})")
             save_transaction_status(wrap_counter, unwrap_counter, total_tx)
 
-    if unwrap_counter < 35 and total_tx < 110:
+    if unwrap_counter < 10 and total_tx < 110:
         if unwrap_weth_to_eth(amount_in_wei):
             unwrap_counter += 1
             total_tx += 1
             print(f"Total Transactions: {total_tx} (Unwrapping: {unwrap_counter})")
             save_transaction_status(wrap_counter, unwrap_counter, total_tx)
 
-    if total_tx >= 70:
+    if total_tx >= 20:
         if os.path.exists('transaction_status.json'):
             os.remove('transaction_status.json')
             print("Transaction status file deleted after reaching 70 transactions.")
